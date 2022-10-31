@@ -1,8 +1,18 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ProductsCard({ data, titleHeader, titleFooter }) {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -28,7 +38,9 @@ export default function ProductsCard({ data, titleHeader, titleFooter }) {
         numColumns={2}
         renderItem={({ item, index }) => {
           return (
-            <View
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => navigation.navigate("Details", { item })}
               style={[
                 {
                   borderBottomWidth: index === 2 || index === 3 ? 0 : 0.5,
@@ -54,7 +66,7 @@ export default function ProductsCard({ data, titleHeader, titleFooter }) {
                 {item.name}
               </Text>
               <Text style={styles.shipping}>{item.shipping}</Text>
-            </View>
+            </TouchableOpacity>
           );
         }}
       />

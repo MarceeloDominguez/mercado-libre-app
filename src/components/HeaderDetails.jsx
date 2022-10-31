@@ -2,20 +2,26 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-export default function Header() {
+export default function HeaderDetails() {
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}>
-        <View style={styles.search}>
-          <Ionicons name="search-outline" size={18} color="#898AA6" />
-          <Text style={styles.placeholder}>Buscar en Mercado Libre</Text>
+        <Text style={styles.title}>Producto</Text>
+        <View style={styles.icons}>
+          <Ionicons name="heart-outline" size={26} color="#333" />
+          <Ionicons
+            name="search-outline"
+            size={25}
+            color="#333"
+            style={styles.icon}
+          />
+          <Ionicons
+            name="cart-outline"
+            size={26}
+            color="#333"
+            style={styles.icon}
+          />
         </View>
-        <Ionicons
-          name="cart-outline"
-          size={26}
-          color="#333"
-          style={{ textAlignVertical: "center" }}
-        />
       </View>
       <View style={styles.lowerContainer}>
         <Ionicons name="location-outline" size={18} color="#333" />
@@ -37,35 +43,31 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FCE700",
     elevation: 8,
+    zIndex: 1,
   },
   upperContainer: {
     flexDirection: "row",
+    paddingTop: 14,
+    paddingLeft: 55,
+    paddingRight: 15,
     justifyContent: "space-between",
-    paddingHorizontal: 10,
+    paddingBottom: 20,
+  },
+  title: {
+    fontSize: 19,
+    letterSpacing: 0.5,
+    color: "#333",
+  },
+  icons: {
+    flexDirection: "row",
+  },
+  icon: {
+    paddingLeft: 18,
   },
   lowerContainer: {
     flexDirection: "row",
-    paddingBottom: 14,
-    paddingTop: 4,
-    paddingHorizontal: 16,
-    textAlignVertical: "center",
-  },
-  placeholder: {
-    letterSpacing: 0.5,
-    color: "#898AA6",
-    paddingLeft: 4,
-  },
-  search: {
-    backgroundColor: "#fff",
-    flex: 1,
-    height: 36,
-    borderRadius: 18,
-    flexDirection: "row",
-    alignItems: "center",
-    paddingLeft: 8,
-    marginVertical: 10,
-    marginLeft: 40,
-    marginRight: 10,
+    paddingLeft: 16,
+    paddingBottom: 12,
   },
   textAddress: {
     fontSize: 14,

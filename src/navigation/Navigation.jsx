@@ -7,8 +7,11 @@ import {
   DrawerItem,
 } from "@react-navigation/drawer";
 import { useNavigation } from "@react-navigation/native";
+import Details from "../screens/Details";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function Navigation() {
   const navigation = useNavigation();
@@ -29,8 +32,25 @@ export default function Navigation() {
         // ),
       }}
     >
-      <Drawer.Screen name="Home" component={Home} />
+      {/* <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Details" component={Details} /> */}
+      <Drawer.Screen name="StackHome" component={StackHome} />
     </Drawer.Navigator>
+  );
+}
+
+function StackHome() {
+  return (
+    <Stack.Navigator
+      screenOptions={{ headerTransparent: true, headerTitle: "" }}
+    >
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="Details"
+        component={Details}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
   );
 }
 
