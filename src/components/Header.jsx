@@ -13,16 +13,21 @@ export default function Header() {
         <Ionicons
           name="cart-outline"
           size={26}
-          color="#000"
+          color="#333"
           style={{ textAlignVertical: "center" }}
         />
       </View>
       <View style={styles.lowerContainer}>
-        <Ionicons name="location-outline" size={18} color="#1B2430" />
+        <Ionicons name="location-outline" size={18} color="#333" />
         <Text style={styles.textAddress}>
           Enviar a Marcelo Dominguez - Street 1325
         </Text>
-        <Ionicons name="chevron-forward-outline" size={18} color="#898AA6" />
+        <Ionicons
+          name="chevron-forward-outline"
+          size={15}
+          color="#c1b74d"
+          style={{ textAlignVertical: "center" }}
+        />
       </View>
     </View>
   );
@@ -65,6 +70,6 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     fontSize: 14,
     paddingHorizontal: 10,
-    color: "#1B2430",
+    color: "#333",
   },
 });
