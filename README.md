@@ -1,4 +1,6 @@
-# mercado-libre-app
+# Mercado Libre App
+
+Clone of the Mercado Libre app where you can see the details of each product
 
 <table>
 <tr>
